@@ -5,11 +5,13 @@ import Layout from './pages/Layout';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ProductsPage from './pages/ProductsPage';
+import ScrollToTop from './ui/ScrollToTop';
 
 function App() {
     return (
         <div className="h-full bg-gray-100">
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path="/" element={<HomePage />} />

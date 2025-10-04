@@ -10,7 +10,7 @@ const ProductsContent = () => {
     if (error)
         return <ErrorFallback error={error} resetErrorBoundary={refetch} />;
     return (
-        <section className="flex flex-col items-center justify-center pt-12 sm:pt-16">
+        <section className="flex flex-col items-center justify-center py-12 sm:pt-16">
             <div>
                 <h1 className="mx-auto text-4xl text-gray-400 md:text-6xl">
                     Our Products

@@ -13,7 +13,7 @@ const SimilarProductsSection = ({ category }) => {
         return <ErrorFallback error={error} resetErrorBoundary={refetch} />;
     }
     return (
-        <section className="mb-12 flex flex-col items-center justify-center pt-12 sm:pt-16">
+        <section className="flex flex-col items-center justify-center py-12 sm:pt-16">
             <div className="mt-12 flex justify-center">
                 <h1 className="mx-auto text-4xl text-gray-400 md:text-6xl">
                     Similar Products
