@@ -1,7 +1,7 @@
 import HomePageContent from '../features/home/HomePageContent';
 
 const HomePage = () => {
-  return <HomePageContent />;
+    return <HomePageContent />;
 };
 
 export default HomePage;
