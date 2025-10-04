@@ -2,6 +2,7 @@ import { BsBoxArrowUpRight } from 'react-icons/bs';
 import { IoCartOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router';
 import Star from './Star';
+import Button from './Button';
 
 const ProductCard = ({ product }) => {
     const {
@@ -36,17 +37,17 @@ const ProductCard = ({ product }) => {
             </div>
 
             <div className="flex items-center justify-between gap-2 border-t border-gray-200 p-4">
-                <button
-                    onClick={() => navigate(`/product-details/${id}`)}
-                    className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100"
-                >
-                    View Details
-                    <BsBoxArrowUpRight />
-                </button>
-                <button className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-                    Add to Cart
-                    <IoCartOutline size={18} />
-                </button>
+                <Button
+                    action={() => navigate(`/product-details/${id}`)}
+                    extraClasses="border border-gray-300 text-gray-700 hover:bg-gray-100"
+                    icon={<BsBoxArrowUpRight />}
+                    title="View Details"
+                />
+                <Button
+                    extraClasses="bg-blue-600 text-white hover:bg-blue-700"
+                    title="Add to Cart"
+                    icon={<IoCartOutline size={18} />}
+                />
             </div>
         </div>
     );

@@ -1,20 +1,22 @@
 import { useCallback, useEffect, useState } from "react";
-import { fetchProducts } from "../../services/api";
+import { fetchSimilarProducts } from "../../services/api";
 
-const useGetProducts = (limit) => {
+const useGetSimilarProducts = (category) => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [refetchIndex, setRefetchIndex] = useState(0);
+
     const refetch = useCallback(() => {
         setRefetchIndex((prev) => prev + 1)
     }, [])
     useEffect(() => {
-        const getProducts = async () => {
+        if (!category) return;
+        const getSimilarProducts = async () => {
             setLoading(true)
-            setError(false)
+            setError(null)
             try {
-                const data = await fetchProducts(limit)
+                const data = await fetchSimilarProducts(category)
                 setProducts(data)
             } catch (err) {
                 setError(err.message)
@@ -22,9 +24,9 @@ const useGetProducts = (limit) => {
                 setLoading(false)
             }
         }
-        getProducts()
-    }, [limit, refetchIndex])
+        getSimilarProducts()
+    }, [category, refetchIndex])
     return { products, loading, error, refetch }
 }
 
-export default useGetProducts
+export default useGetSimilarProducts

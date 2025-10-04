@@ -1,8 +1,8 @@
-const Spinner = ({ size }) => {
+const Spinner = () => {
     return (
-        <div className="flex h-full items-center justify-center">
+        <div className="flex h-[60vh] items-center justify-center">
             <div
-                className={`h-${size} w-${size} mt-12 animate-spin rounded-full border-4 border-solid border-blue-500 border-t-transparent`}
+                className={`mt-12 h-18 w-18 animate-spin rounded-full border-4 border-solid border-blue-500 border-t-transparent`}
             ></div>
         </div>
     );

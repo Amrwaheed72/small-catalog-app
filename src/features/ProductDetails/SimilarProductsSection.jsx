@@ -1,20 +1,22 @@
-import ProductCard from '../../ui/ProductCard';
-import useGetProducts from './useGetProducts';
-import Spinner from '../../ui/Spinner';
 import Empty from '../../ui/Empty';
 import ErrorFallback from '../../ui/ErrorFallback';
+import ProductCard from '../../ui/ProductCard';
+import Spinner from '../../ui/Spinner';
+import useGetSimilarProducts from './useGetSimilarProducts';
 
-const ProductsSection = () => {
-    const { products, error, loading, refetch } = useGetProducts();
+const SimilarProductsSection = ({ category }) => {
+    const { products, loading, error, refetch } =
+        useGetSimilarProducts(category);
     if (loading) return <Spinner />;
-    if (error)
+
+    if (error) {
         return <ErrorFallback error={error} resetErrorBoundary={refetch} />;
-    console.log(products);
+    }
     return (
-        <section className="flex flex-col items-center justify-center pt-12 sm:pt-16">
-            <div>
+        <section className="mb-12 flex flex-col items-center justify-center pt-12 sm:pt-16">
+            <div className="mt-12 flex justify-center">
                 <h1 className="mx-auto text-4xl text-gray-400 md:text-6xl">
-                    Our Products
+                    Similar Products
                 </h1>
             </div>
             {!products || products.length === 0 ? (
@@ -30,4 +32,4 @@ const ProductsSection = () => {
     );
 };
 
-export default ProductsSection;
+export default SimilarProductsSection;

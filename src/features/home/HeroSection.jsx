@@ -1,5 +1,3 @@
-import React from 'react';
-
 const HeroSection = () => {
     return (
         <section className="relative flex h-[60vh] items-center justify-center overflow-hidden text-center md:h-[70vh] lg:h-[80vh]">
