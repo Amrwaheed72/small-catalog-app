@@ -1,5 +1,5 @@
 const CartPage = () => {
-    return <div>CartPage</div>;
+    return <div className="h-[59vh]">CartPage</div>;
 };
 
 export default CartPage;

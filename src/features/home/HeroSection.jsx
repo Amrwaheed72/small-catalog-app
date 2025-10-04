@@ -1,4 +1,4 @@
-const HeroSection = () => {
+const HeroSection = ({ onScrollClick }) => {
     return (
         <section className="relative flex h-[60vh] items-center justify-center overflow-hidden text-center md:h-[70vh] lg:h-[80vh]">
             <div className="absolute inset-0 z-0">
@@ -18,7 +18,7 @@ const HeroSection = () => {
                     Elevate your wardrobe with pieces that speak to you.
                 </p>
                 <button
-                    id="#products"
+                    onClick={onScrollClick}
                     className="transform cursor-pointer scroll-smooth rounded-full bg-white px-8 py-3 text-lg font-semibold text-gray-900 shadow-lg transition-colors duration-300 hover:scale-105 hover:bg-gray-200"
                 >
                     Shop the Collection
